@@ -14,9 +14,6 @@ app.post("/newcall", async (req, res) => {
     send_webhook(username.data.name, `https://www.roblox.com/games/start?placeId=${req.body.PlaceId}&gameInstanceId=${req.body.JobId}&launchData=${encodeURIComponent(JSON.stringify({'UserId': req.body.UserId}))}`)
     return res.send('successful')
 })
-const server = app.listen(3000, () => {
-    const host = server.address().address;
-    const port = server.address().port;
-    
-    console.log(`Server running at http://${host}:${port}`);
+app.listen(3000, () => {
+    print("server running")
 });
